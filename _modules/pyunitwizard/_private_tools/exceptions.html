@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyunitwizard._private_tools.exceptions &mdash; PyUnitWizard 0.4.0.b0+1.g5c5414a documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> PyUnitWizard
+          </a>
+              <div class="version">
+                0.4.0.b0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/about/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/about/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/about/installation.html#last-stable-version">Last stable version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/about/installation.html#last-testing-version">Last testing version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/about/installation.html#developing-version-from-the-source-code">Developing version from the source code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/about/showcase/index.html">Showcase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/about/showcase/Quick_Guide.html">Quick Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/about/showcase/Quick_Guide.html#import-pyunitwizard-and-choose-the-libraries-you-are-going-to-work-with">Import PyUnitWizard and choose the libraries you are going to work with.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/about/showcase/Quick_Guide.html#let-s-play-a-bit-with-quantities-and-units">Let’s play a bit with quantities and units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/about/showcase/Quick_Guide.html#the-default-quantity-form">The default quantity form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/about/showcase/Quick_Guide.html#the-standards">The standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/about/showcase/Quick_Guide.html#integrate-pyunitwizard-in-your-library">Integrate PyUnitWizard in your library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Importing.html">Import and configure PyUnitWizard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Quantities_and_Units.html">Quantities and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Dimensionality.html">Dimensionality and Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Convert.html">Convert quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Strings.html">Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Standardize.html">Standardization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/Check.html">Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/user/In_Your_Library.html">PyUnitWizard in your library</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/developer/intro/index.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/intro/Introduction.html">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/developer/names_convention.html">Names convention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/names_convention.html#project-name">Project name</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#github-repo-and-conda-env">GitHub repo and Conda env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#readme-file-and-documents">README file and documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#package">Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/names_convention.html#modules-classes-methods-variables-and-others-programming-elements">Modules, classes, methods, variables, and others programming elements.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#methods-and-functions">Methods and functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#variables-input-arguments-and-parameters">Variables, input arguments and parameters.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/names_convention.html#not-public-methods-and-variables">Not public methods and variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/developer/exceptions.html">Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/exceptions.html#notimplementedmethoderror">NotImplementedMethodError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/exceptions.html#notimplementedclasserror">NotImplementedClassError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/exceptions.html#badcallerror">BadCallError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/exceptions.html#nostandarderror">NoStandardError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/exceptions.html#unknownformerror">UnknownFormError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/exceptions.html#librarynotfounderror">LibraryNotFoundError</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contents/developer/documentation/index.html">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/documentation/sphinx.html">Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/documentation/docstrings.html">Docstrings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/docstrings.html#documenting-a-class">Documenting a class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/docstrings.html#documenting-a-method">Documenting a method</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contents/developer/documentation/admonitions.html">Admonitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/admonitions.html#note">Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/admonitions.html#did-you-know">Did you know…?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/admonitions.html#it-is-suggested">It is suggested…</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/admonitions.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../contents/developer/documentation/admonitions.html#warning">Warning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_user.html">Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autosummary/pyunitwizard.get_form.html">pyunitwizard.get_form</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api_developer.html">Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api_developer.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../autosummary/pyunitwizard._private_tools.exceptions.NotImplementedMethodError.html">pyunitwizard._private_tools.exceptions.NotImplementedMethodError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autosummary/pyunitwizard._private_tools.exceptions.NotImplementedClassError.html">pyunitwizard._private_tools.exceptions.NotImplementedClassError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autosummary/pyunitwizard._private_tools.exceptions.BadCallError.html">pyunitwizard._private_tools.exceptions.BadCallError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autosummary/pyunitwizard._private_tools.exceptions.NoStandardError.html">pyunitwizard._private_tools.exceptions.NoStandardError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autosummary/pyunitwizard._private_tools.exceptions.UnknownFormError.html">pyunitwizard._private_tools.exceptions.UnknownFormError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autosummary/pyunitwizard._private_tools.exceptions.LibraryNotFoundError.html">pyunitwizard._private_tools.exceptions.LibraryNotFoundError</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyUnitWizard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      <li>pyunitwizard._private_tools.exceptions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pyunitwizard._private_tools.exceptions</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="NotImplementedMethodError"><a class="viewcode-back" href="../../../autosummary/pyunitwizard._private_tools.exceptions.NotImplementedMethodError.html#pyunitwizard._private_tools.exceptions.NotImplementedMethodError">[docs]</a><span></span><span class="k">class</span> <span class="nc">NotImplementedMethodError</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a method has not been fully implemented yet.</span>
+
+<span class="sd">    This exception is raised when a method has been already defined but its code was not fully</span>
+<span class="sd">    implemented yet. Maybe the method was just included in a developing version to be coded in the</span>
+<span class="sd">    future. Or maybe the method works already for certain values of the input arguments, but not</span>
+<span class="sd">    for others yet.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    This exception does not require input arguments.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NotImplementedMethodError</span>
+<span class="sd">        A message is printed out with the name of the method raising the exception, the link to</span>
+<span class="sd">        the API documentation, and the link to the issues board of PyUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import NotImplementedMethodError</span>
+<span class="sd">    &gt;&gt;&gt; def method_name(a, b=True):</span>
+<span class="sd">    ...    raise NotImplementedMethodError</span>
+<span class="sd">    ...    pass</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; NotImplementedMethodError &lt;developer:exceptions:NotImplementedMethodError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> method has not been implemented yet in the way you are using it. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Check </span><span class="si">{</span><span class="n">api_doc</span><span class="si">}</span><span class="s2"> for more information. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still want to suggest its implementation, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NotImplementedClassError"><a class="viewcode-back" href="../../../autosummary/pyunitwizard._private_tools.exceptions.NotImplementedClassError.html#pyunitwizard._private_tools.exceptions.NotImplementedClassError">[docs]</a><span class="k">class</span> <span class="nc">NotImplementedClassError</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a class has not been fully implemented yet.</span>
+
+<span class="sd">    This exception is raised when a class has being already defined but its code was not fully</span>
+<span class="sd">    implemented yet. Maybe the class was just included in a developing version to be coded in the</span>
+<span class="sd">    future. Or maybe the class can be instantated already for certain values of the input</span>
+<span class="sd">    arguments, but not for others yet.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    This exception does not require input arguments.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NotImplementedClassError</span>
+<span class="sd">        A message is printed out with the name of the class raising the exception, the link to</span>
+<span class="sd">        the API documentation, and the link to the issues board of PyUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import NotImplementedClassError</span>
+<span class="sd">    &gt;&gt;&gt; class ClassName():</span>
+<span class="sd">    ...    def __init__(self):</span>
+<span class="sd">    ...       raise NotImplementedClassError</span>
+<span class="sd">    ...       pass</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; NotImplementedClassError &lt;developer:exceptions:NotImplementedClassError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> class has not been implemented yet in the way you are using it. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Check </span><span class="si">{</span><span class="n">api_doc</span><span class="si">}</span><span class="s2"> for more information. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still want to suggest its implementation, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">NotImplementedParsingError</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when parsing a string with the parser and to the form choosen has not been</span>
+<span class="sd">    implemented yet.</span>
+
+<span class="sd">    This exception is raised when parsing a strint with the parser and to the form choosen by the</span>
+<span class="sd">    user, has not been implemented yet.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    parser : str</span>
+<span class="sd">        The name of the parser choosen by the user.</span>
+<span class="sd">    to_form : str</span>
+<span class="sd">        The name of target form choosen by the user.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NotImplementedMethodError</span>
+<span class="sd">        A message is printed out with the link to the documentation section about parsing strings,</span>
+<span class="sd">        and the link to the issues board of PyUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import NotImplementedParsingError</span>
+<span class="sd">    &gt;&gt;&gt; def method_name(string, parser=&#39;pint&#39;, to_form=&#39;new_form&#39;):</span>
+<span class="sd">    ...    if parser==&#39;pint&#39; and to_form=&#39;new_form&#39;:</span>
+<span class="sd">    ...       raise NotImplementedParsingError(&#39;pint&#39;, &#39;new_form&#39;)</span>
+<span class="sd">    ...    pass</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; NotImplementedParsingError &lt;developer:exceptions:NotImplementedParsingError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">,</span> <span class="n">to_form</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Parsing a string with the </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">parser</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> parser to the form </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">to_form</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> has not been implemented yet. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Check </span><span class="si">{</span><span class="n">api_doc</span><span class="si">}</span><span class="s2"> for more information. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still want to suggest its implementation, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="BadCallError"><a class="viewcode-back" href="../../../autosummary/pyunitwizard._private_tools.exceptions.BadCallError.html#pyunitwizard._private_tools.exceptions.BadCallError">[docs]</a><span class="k">class</span> <span class="nc">BadCallError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a method, or a class, was not properly called or instantiated.</span>
+
+<span class="sd">    This exception is raised when a method or a class was not properly called or instantiated.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    argument : str, optional</span>
+<span class="sd">        The name of the possible wrong input argument.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    BadCallError</span>
+<span class="sd">        A message is printed out with the name of the class or the method raising the exception,</span>
+<span class="sd">        the possible wrong argument, the link to the API documentation, and the link to the</span>
+<span class="sd">        issues board of PyUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import BadCallError</span>
+<span class="sd">    &gt;&gt;&gt; def method_name(item, a=True):</span>
+<span class="sd">    ...    if type(a) not in [int, float]:</span>
+<span class="sd">    ...       raise BadCallError(&#39;a&#39;)</span>
+<span class="sd">    ...    pass</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; BadCallError &lt;developer:exceptions:BadCallError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;The </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> method or class was not properly invoked&quot;</span>
+        <span class="k">if</span> <span class="n">argument</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;, probably due to the </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">argument</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> input argument&quot;</span>
+        <span class="n">message</span> <span class="o">+=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;. Check </span><span class="si">{</span><span class="n">api_doc</span><span class="si">}</span><span class="s2"> for more information. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still need help, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="NoStandardError"><a class="viewcode-back" href="../../../autosummary/pyunitwizard._private_tools.exceptions.NoStandardError.html#pyunitwizard._private_tools.exceptions.NoStandardError">[docs]</a><span class="k">class</span> <span class="nc">NoStandardError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a quantity needs to be standardized but there are no standards</span>
+<span class="sd">    declared.</span>
+
+<span class="sd">    This exception is raised when a quantity needs to be standardized but the conversion can not be</span>
+<span class="sd">    executed. There is at least a unit involved without standard declared.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    NoStandardError</span>
+<span class="sd">        A message is printed out with the name of the class or the method raising the exception,</span>
+<span class="sd">        the possible wrong argument, the link to the API documentation, and the link to the</span>
+<span class="sd">        issues board of PyUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import pyunitwizard as puw</span>
+<span class="sd">    &gt;&gt;&gt; puw.configure.set_standard_units([&#39;nm&#39;, &#39;ps&#39;, &#39;kJ&#39;])</span>
+<span class="sd">    &gt;&gt;&gt; standard = get_standard_units(&#39;10 litres&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; if standard is None:</span>
+<span class="sd">    ...    raise NoStandardError()</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; BadCallError &lt;developer:exceptions:NoStandardError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The input quantity method has no standard. &quot;</span>
+                   <span class="sa">f</span><span class="s2">&quot;A complete set of standard units need to be defined. &quot;</span>
+                   <span class="sa">f</span><span class="s2">&quot;Check </span><span class="si">{</span><span class="n">api_doc</span><span class="si">}</span><span class="s2"> for more information. &quot;</span>
+                   <span class="sa">f</span><span class="s2">&quot;If you still need help, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">.&quot;</span>
+                   <span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="UnknownFormError"><a class="viewcode-back" href="../../../autosummary/pyunitwizard._private_tools.exceptions.UnknownFormError.html#pyunitwizard._private_tools.exceptions.UnknownFormError">[docs]</a><span class="k">class</span> <span class="nc">UnknownFormError</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when the input quantity or unit has an unknown form and thereby not supported.</span>
+
+<span class="sd">    This exception is raised when PyUnitWizard does not recognize a quantity or unit as a supported form.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    This exception does not require input arguments.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    UnknownFormError</span>
+<span class="sd">        A message is printed out with the name of the class or the method raising the exception,</span>
+<span class="sd">        the link to the API documentation with the list of supported forms, and the link to the</span>
+<span class="sd">        issues board of PyUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import UnknownFormError</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard import get_form</span>
+<span class="sd">    &gt;&gt;&gt; try:</span>
+<span class="sd">    ...    _ = get_form(item)</span>
+<span class="sd">    ... except:</span>
+<span class="sd">    ...    raise UnknownFormError</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; UnknownFormError &lt;developer:exceptions:UnknownFormError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">sabueso</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The input quantity in </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">method_name</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> has an unknown form. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Check </span><span class="si">{</span><span class="n">api_doc</span><span class="si">}</span><span class="s2"> for more information. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still need help, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="LibraryNotFoundError"><a class="viewcode-back" href="../../../autosummary/pyunitwizard._private_tools.exceptions.LibraryNotFoundError.html#pyunitwizard._private_tools.exceptions.LibraryNotFoundError">[docs]</a><span class="k">class</span> <span class="nc">LibraryNotFoundError</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a library required by the user is not found.</span>
+
+<span class="sd">    Some libraries are not considered as dependencies by PyUnitWizard. These libraries are required if</span>
+<span class="sd">    the user choose to work with a specific quantities&#39; package. In this case, the user hat to</span>
+<span class="sd">    install it previousy. It that&#39;s not the case, the method will raise this exceptions suggesting</span>
+<span class="sd">    the manual installation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    argument : str</span>
+<span class="sd">        The name of the not found library.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    LibraryNotFoundError</span>
+<span class="sd">        A message is printed out with the name of the class or the method raising the exception,</span>
+<span class="sd">        the name of the not found library, the link to the API documentation, and the link to the</span>
+<span class="sd">        issues board of PytUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import LibraryNotFoundError</span>
+<span class="sd">    &gt;&gt;&gt; def method_name(item, argument=&#39;pint&#39;):</span>
+<span class="sd">    ...    if argument == &#39;pint&#39;:</span>
+<span class="sd">    ...       try:</span>
+<span class="sd">    ...          import pint</span>
+<span class="sd">    ...       except:</span>
+<span class="sd">    ...          raise LibraryNotFoundError(&#39;pint&#39;)</span>
+<span class="sd">    ...    pass</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; LibraryNotFoundError &lt;developer:exceptions:LibraryNotFoundError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">library</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The python library </span><span class="si">{</span><span class="n">library</span><span class="si">}</span><span class="s2"> was not found. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Although </span><span class="si">{</span><span class="n">library</span><span class="si">}</span><span class="s2"> is not considered a dependency, it needs &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;to be installed to execute the </span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="s2"> method the way you require. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still need help, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span></div>
+
+<span class="k">class</span> <span class="nc">LibraryWithoutParserError</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Exception raised when a library can not parse strings.</span>
+
+<span class="sd">    Some libraries cannot convert strings to quantities. This error will be raised by the API methods</span>
+<span class="sd">    `string_to_quantity` and `string_to_unit` of those libraries without strings&#39; parser.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    argument : str</span>
+<span class="sd">        The name of the library without parser.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    LibraryWithoutParserError</span>
+<span class="sd">        A message is printed out with the name of the library wihtout parser, the link to the</span>
+<span class="sd">        section in the documentation regarding parser regarding parsers, and the link to the</span>
+<span class="sd">        issues board of PytUnitWizard&#39;s GitHub repository.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import pyunitwizard as puw</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import LibraryWithoutParserError</span>
+<span class="sd">    &gt;&gt;&gt; from pyunitwizard._private_tools.exceptions import LibraryWithoutParserError</span>
+<span class="sd">    &gt;&gt;&gt; def method_name(item, argument=&#39;pint&#39;):</span>
+<span class="sd">    ...    if argument == &#39;pint&#39;:</span>
+<span class="sd">    ...       try:</span>
+<span class="sd">    ...          import pint</span>
+<span class="sd">    ...       except:</span>
+<span class="sd">    ...          raise LibraryNotFoundError(&#39;pint&#39;)</span>
+<span class="sd">    ...    pass</span>
+
+<span class="sd">    .. admonition:: See Also</span>
+<span class="sd">       :class: attention</span>
+
+<span class="sd">        :ref:`Developer Guide \&gt; Exceptions \&gt; LibraryWithoutStringsParserError &lt;developer:exceptions:LibraryWithoutStringsParserError&gt;`</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">library</span><span class="p">):</span>
+
+        <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">__github_issues_web__</span>
+        <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">stack</span>
+
+        <span class="n">all_stack_frames</span> <span class="o">=</span> <span class="n">stack</span><span class="p">()</span>
+        <span class="n">caller_stack_frame</span> <span class="o">=</span> <span class="n">all_stack_frames</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">caller_name</span> <span class="o">=</span> <span class="n">caller_stack_frame</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="n">api_doc</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The python library </span><span class="si">{</span><span class="n">library</span><span class="si">}</span><span class="s2"> was not found. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Although </span><span class="si">{</span><span class="n">library</span><span class="si">}</span><span class="s2"> is not considered a dependency, it needs &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;to be installed to execute the </span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="s2"> method the way you require. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;If you still need help, open a new issue in </span><span class="si">{</span><span class="n">__github_issues_web__</span><span class="si">}</span><span class="s2">.&quot;</span>
+                <span class="p">)</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+
+</pre></div>
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/pyunitwizard">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2022, The Mexico City Childrens&#39; Hospital Federico Gomez, its Unit of Research on Computational Biology and Drug Design, and authors | This project is licensed under the terms of the MIT license. See further details in the source code repository | Project based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Similarity &mdash; PyUnitWizard 0.4.0.b0+1.g5c5414a documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/mystnb.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> PyUnitWizard
+          </a>
+              <div class="version">
+                0.4.0.b0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/installation.html#last-stable-version">Last stable version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/installation.html#last-testing-version">Last testing version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/installation.html#developing-version-from-the-source-code">Developing version from the source code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/showcase/index.html">Showcase</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/showcase/Quick_Guide.html">Quick Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../about/showcase/Quick_Guide.html#import-pyunitwizard-and-choose-the-libraries-you-are-going-to-work-with">Import PyUnitWizard and choose the libraries you are going to work with.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/showcase/Quick_Guide.html#let-s-play-a-bit-with-quantities-and-units">Let’s play a bit with quantities and units</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/showcase/Quick_Guide.html#the-default-quantity-form">The default quantity form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/showcase/Quick_Guide.html#the-standards">The standards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../about/showcase/Quick_Guide.html#integrate-pyunitwizard-in-your-library">Integrate PyUnitWizard in your library</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Importing.html">Import and configure PyUnitWizard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Quantities_and_Units.html">Quantities and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Dimensionality.html">Dimensionality and Compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Convert.html">Convert quantities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Strings.html">Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Standardize.html">Standardization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Check.html">Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="In_Your_Library.html">PyUnitWizard in your library</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/intro/index.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/intro/Introduction.html">Introduction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/names_convention.html">Names convention</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/names_convention.html#project-name">Project name</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#github-repo-and-conda-env">GitHub repo and Conda env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#readme-file-and-documents">README file and documents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#package">Package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/names_convention.html#modules-classes-methods-variables-and-others-programming-elements">Modules, classes, methods, variables, and others programming elements.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#modules">Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#classes">Classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#exceptions">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#methods-and-functions">Methods and functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#variables-input-arguments-and-parameters">Variables, input arguments and parameters.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/names_convention.html#not-public-methods-and-variables">Not public methods and variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/exceptions.html">Exceptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/exceptions.html#notimplementedmethoderror">NotImplementedMethodError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/exceptions.html#notimplementedclasserror">NotImplementedClassError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/exceptions.html#badcallerror">BadCallError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/exceptions.html#nostandarderror">NoStandardError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/exceptions.html#unknownformerror">UnknownFormError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/exceptions.html#librarynotfounderror">LibraryNotFoundError</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/documentation/index.html">Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/documentation/sphinx.html">Sphinx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/documentation/docstrings.html">Docstrings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/docstrings.html#documenting-a-class">Documenting a class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/docstrings.html#documenting-a-method">Documenting a method</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/documentation/admonitions.html">Admonitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/admonitions.html#note">Note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/admonitions.html#did-you-know">Did you know…?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/admonitions.html#it-is-suggested">It is suggested…</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/admonitions.html#see-also">See also</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../developer/documentation/admonitions.html#warning">Warning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api_user.html">Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../autosummary/pyunitwizard.get_form.html">pyunitwizard.get_form</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_developer.html">Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api_developer.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../autosummary/pyunitwizard._private_tools.exceptions.NotImplementedMethodError.html">pyunitwizard._private_tools.exceptions.NotImplementedMethodError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autosummary/pyunitwizard._private_tools.exceptions.NotImplementedClassError.html">pyunitwizard._private_tools.exceptions.NotImplementedClassError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autosummary/pyunitwizard._private_tools.exceptions.BadCallError.html">pyunitwizard._private_tools.exceptions.BadCallError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autosummary/pyunitwizard._private_tools.exceptions.NoStandardError.html">pyunitwizard._private_tools.exceptions.NoStandardError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autosummary/pyunitwizard._private_tools.exceptions.UnknownFormError.html">pyunitwizard._private_tools.exceptions.UnknownFormError</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../autosummary/pyunitwizard._private_tools.exceptions.LibraryNotFoundError.html">pyunitwizard._private_tools.exceptions.LibraryNotFoundError</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyUnitWizard</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Similarity</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="similarity">
+<h1>Similarity<a class="headerlink" href="#similarity" title="Permalink to this headline"></a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyunitwizard</span> <span class="k">as</span> <span class="nn">puw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puw</span><span class="o">.</span><span class="n">configure</span><span class="o">.</span><span class="n">load_library</span><span class="p">([</span><span class="s1">&#39;openmm.unit&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;1 meter&#39;</span><span class="p">,</span> <span class="s1">&#39;1 meter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedParsingError</span><span class="g g-Whitespace">                </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3214</span><span class="o">/</span><span class="mf">3007126617.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;1 meter&#39;</span><span class="p">,</span> <span class="s1">&#39;1 meter&#39;</span><span class="p">)</span>
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py</span> in <span class="ni">similarity</span><span class="nt">(quantity_or_unit_1, quantity_or_unit_2, relative_tolerance)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="k">def</span> <span class="nf">similarity</span><span class="p">(</span><span class="n">quantity_or_unit_1</span><span class="p">,</span> <span class="n">quantity_or_unit_2</span><span class="p">,</span> <span class="n">relative_tolerance</span><span class="o">=</span><span class="mf">1e-08</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> 
+<span class="ne">---&gt; </span><span class="mi">70</span>     <span class="n">output</span> <span class="o">=</span> <span class="n">compatibility</span><span class="p">(</span><span class="n">quantity_or_unit_1</span><span class="p">,</span> <span class="n">quantity_or_unit_2</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> 
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">if</span> <span class="n">output</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py</span> in <span class="ni">compatibility</span><span class="nt">(quantity_or_unit_1, quantity_or_unit_2)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span> <span class="nf">compatibility</span><span class="p">(</span><span class="n">quantity_or_unit_1</span><span class="p">,</span> <span class="n">quantity_or_unit_2</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> 
+<span class="ne">--&gt; </span><span class="mi">115</span>     <span class="k">if</span> <span class="n">is_dimensionless</span><span class="p">(</span><span class="n">quantity_or_unit_1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">is_dimensionless</span><span class="p">(</span><span class="n">quantity_or_unit_2</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span> 
+<span class="g g-Whitespace">    </span><span class="mi">117</span>         <span class="n">form1</span> <span class="o">=</span> <span class="n">get_form</span><span class="p">(</span><span class="n">quantity_or_unit_1</span><span class="p">)</span>
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py</span> in <span class="ni">is_dimensionless</span><span class="nt">(quantity_or_unit)</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="k">def</span> <span class="nf">is_dimensionless</span><span class="p">(</span><span class="n">quantity_or_unit</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> 
+<span class="ne">--&gt; </span><span class="mi">144</span>     <span class="n">d</span> <span class="o">=</span> <span class="n">get_dimensionality</span><span class="p">(</span><span class="n">quantity_or_unit</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="n">d</span> <span class="o">=</span> <span class="n">_dimensionality_dict_to_array</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span>     <span class="n">output</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py</span> in <span class="ni">get_dimensionality</span><span class="nt">(quantity_or_unit)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> 
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="n">form</span> <span class="o">=</span> <span class="n">get_form</span><span class="p">(</span><span class="n">quantity_or_unit</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">95</span>     <span class="n">dim</span> <span class="o">=</span> <span class="n">dict_dimensionality</span><span class="p">[</span><span class="n">form</span><span class="p">](</span><span class="n">quantity_or_unit</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span> 
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="k">return</span> <span class="n">dim</span>
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/forms/api_string.py</span> in <span class="ni">dimensionality</span><span class="nt">(quantity_or_unit)</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="kn">from</span> <span class="nn">pyunitwizard</span> <span class="kn">import</span> <span class="n">convert</span> <span class="k">as</span> <span class="n">_convert</span><span class="p">,</span> <span class="n">get_dimensionality</span> <span class="k">as</span> <span class="n">_get_dimensionality</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> 
+<span class="ne">---&gt; </span><span class="mi">34</span>     <span class="n">tmp_quantity_or_unit</span> <span class="o">=</span> <span class="n">_convert</span><span class="p">(</span><span class="n">quantity_or_unit</span><span class="p">,</span> <span class="n">to_form</span><span class="o">=</span><span class="n">default_form</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">default_parser</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="n">output</span> <span class="o">=</span> <span class="n">_get_dimensionality</span><span class="p">(</span><span class="n">tmp_quantity_or_unit</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> 
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py</span> in <span class="ni">convert</span><span class="nt">(quantity_or_unit, to_unit, to_form, parser, to_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span> 
+<span class="ne">--&gt; </span><span class="mi">229</span>             <span class="n">output</span> <span class="o">=</span> <span class="n">_parse</span><span class="p">(</span><span class="n">quantity_or_unit</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="n">parser</span><span class="p">,</span> <span class="n">to_form</span><span class="o">=</span><span class="n">to_form</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span> 
+<span class="g g-Whitespace">    </span><span class="mi">231</span>             <span class="k">if</span> <span class="n">to_unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/parse.py</span> in <span class="ni">parse</span><span class="nt">(string, parser, to_form)</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span> 
+<span class="ne">---&gt; </span><span class="mi">62</span>         <span class="k">raise</span> <span class="n">NotImplementedParsingError</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">to_form</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> 
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="k">return</span> <span class="n">output</span>
+
+<span class="ne">NotImplementedParsingError</span>: Parsing a string with the &quot;openmm.unit&quot; parser to the form &quot;openmm.unit&quot; has not been implemented yet. Check  for more information. If you still want to suggest its implementation, open a new issue in https://github.com/uibcdf/PyUnitWizard/issues
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;1 meter&#39;</span><span class="p">,</span> <span class="s1">&#39;1 centimeter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="s1">&#39;1 meter&#39;</span><span class="p">,</span> <span class="s1">&#39;1.1 meter&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">puw</span><span class="o">.</span><span class="n">configure</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="n">puw</span><span class="o">.</span><span class="n">configure</span><span class="o">.</span><span class="n">load_library</span><span class="p">([</span><span class="s1">&#39;pint&#39;</span><span class="p">,</span><span class="s1">&#39;openmm.unit&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span class="n">bb</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;mm&#39;</span><span class="p">)</span>
+<span class="n">bb</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s1">&#39;pint&#39;</span><span class="p">)</span>
+<span class="n">bb</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span><span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s1">&#39;openmm.unit&#39;</span><span class="p">)</span>
+<span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aa</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;mm&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s1">&#39;pint&#39;</span><span class="p">)</span>
+<span class="n">bb</span> <span class="o">=</span> <span class="n">puw</span><span class="o">.</span><span class="n">quantity</span><span class="p">(</span><span class="mf">0.41</span><span class="p">,</span><span class="s1">&#39;cm&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="s1">&#39;openmm.unit&#39;</span><span class="p">)</span>
+<span class="n">puw</span><span class="o">.</span><span class="n">similarity</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span><span class="n">bb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+    <a href="https://github.com/uibcdf/pyunitwizard">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2022, The Mexico City Childrens&#39; Hospital Federico Gomez, its Unit of Research on Computational Biology and Drug Design, and authors | This project is licensed under the terms of the MIT license. See further details in the source code repository | Project based on the Computational Molecular Science Python Cookiecutter version 1.5.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

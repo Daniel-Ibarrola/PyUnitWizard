@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda/envs/test/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+q = puw.quantity(1.4, 'kJ/mol', form='openmm.unit')
+puw.get_dimensionality(q)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m/tmp/ipykernel_3139/552047769.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mq[0m [0;34m=[0m [0mpuw[0m[0;34m.[0m[0mquantity[0m[0;34m([0m[0;36m1.4[0m[0;34m,[0m [0;34m'kJ/mol'[0m[0;34m,[0m [0mform[0m[0;34m=[0m[0;34m'openmm.unit'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mpuw[0m[0;34m.[0m[0mget_dimensionality[0m[0;34m([0m[0mq[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py[0m in [0;36mget_dimensionality[0;34m(quantity_or_unit)[0m
+[1;32m     93[0m [0;34m[0m[0m
+[1;32m     94[0m     [0mform[0m [0;34m=[0m [0mget_form[0m[0;34m([0m[0mquantity_or_unit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 95[0;31m     [0mdim[0m [0;34m=[0m [0mdict_dimensionality[0m[0;34m[[0m[0mform[0m[0;34m][0m[0;34m([0m[0mquantity_or_unit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     96[0m [0;34m[0m[0m
+[1;32m     97[0m     [0;32mreturn[0m [0mdim[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/forms/api_openmm_unit.py[0m in [0;36mdimensionality[0;34m(quantity_or_unit)[0m
+[1;32m     48[0m         [0;32mraise[0m [0mValueError[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     49[0m [0;34m[0m[0m
+[0;32m---> 50[0;31m     [0;32mfor[0m [0mbase[0m[0;34m,[0m [0mexponent[0m [0;32min[0m [0mtmp_unit[0m[0;34m.[0m[0miter_base_dimensions[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     51[0m         [0;32mif[0m [0mbase[0m[0;34m.[0m[0mname[0m [0;34m==[0m [0;34m'charge'[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     52[0m             [0moutput[0m[0;34m[[0m[0;34m'[A]'[0m[0;34m][0m [0;34m+=[0m [0mexponent[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mAttributeError[0m: 'str' object has no attribute 'iter_base_dimensions'
+AttributeError: 'str' object has no attribute 'iter_base_dimensions'
+

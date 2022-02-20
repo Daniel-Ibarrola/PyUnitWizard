@@ -1,0 +1,79 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda/envs/test/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/envs/test/lib/python3.7/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+puw.similarity('1 meter', '1 meter')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNotImplementedParsingError[0m                Traceback (most recent call last)
+[0;32m/tmp/ipykernel_3214/3007126617.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mpuw[0m[0;34m.[0m[0msimilarity[0m[0;34m([0m[0;34m'1 meter'[0m[0;34m,[0m [0;34m'1 meter'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py[0m in [0;36msimilarity[0;34m(quantity_or_unit_1, quantity_or_unit_2, relative_tolerance)[0m
+[1;32m     68[0m [0;32mdef[0m [0msimilarity[0m[0;34m([0m[0mquantity_or_unit_1[0m[0;34m,[0m [0mquantity_or_unit_2[0m[0;34m,[0m [0mrelative_tolerance[0m[0;34m=[0m[0;36m1e-08[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     69[0m [0;34m[0m[0m
+[0;32m---> 70[0;31m     [0moutput[0m [0;34m=[0m [0mcompatibility[0m[0;34m([0m[0mquantity_or_unit_1[0m[0;34m,[0m [0mquantity_or_unit_2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     71[0m [0;34m[0m[0m
+[1;32m     72[0m     [0;32mif[0m [0moutput[0m [0;34m==[0m [0;32mTrue[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py[0m in [0;36mcompatibility[0;34m(quantity_or_unit_1, quantity_or_unit_2)[0m
+[1;32m    113[0m [0;32mdef[0m [0mcompatibility[0m[0;34m([0m[0mquantity_or_unit_1[0m[0;34m,[0m [0mquantity_or_unit_2[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    114[0m [0;34m[0m[0m
+[0;32m--> 115[0;31m     [0;32mif[0m [0mis_dimensionless[0m[0;34m([0m[0mquantity_or_unit_1[0m[0;34m)[0m [0;32mand[0m [0mis_dimensionless[0m[0;34m([0m[0mquantity_or_unit_2[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    116[0m [0;34m[0m[0m
+[1;32m    117[0m         [0mform1[0m [0;34m=[0m [0mget_form[0m[0;34m([0m[0mquantity_or_unit_1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py[0m in [0;36mis_dimensionless[0;34m(quantity_or_unit)[0m
+[1;32m    142[0m [0;32mdef[0m [0mis_dimensionless[0m[0;34m([0m[0mquantity_or_unit[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    143[0m [0;34m[0m[0m
+[0;32m--> 144[0;31m     [0md[0m [0;34m=[0m [0mget_dimensionality[0m[0;34m([0m[0mquantity_or_unit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    145[0m     [0md[0m [0;34m=[0m [0m_dimensionality_dict_to_array[0m[0;34m([0m[0md[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    146[0m     [0moutput[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mallclose[0m[0;34m([0m[0md[0m[0;34m,[0m [0;36m0.0[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py[0m in [0;36mget_dimensionality[0;34m(quantity_or_unit)[0m
+[1;32m     93[0m [0;34m[0m[0m
+[1;32m     94[0m     [0mform[0m [0;34m=[0m [0mget_form[0m[0;34m([0m[0mquantity_or_unit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 95[0;31m     [0mdim[0m [0;34m=[0m [0mdict_dimensionality[0m[0;34m[[0m[0mform[0m[0;34m][0m[0;34m([0m[0mquantity_or_unit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     96[0m [0;34m[0m[0m
+[1;32m     97[0m     [0;32mreturn[0m [0mdim[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/forms/api_string.py[0m in [0;36mdimensionality[0;34m(quantity_or_unit)[0m
+[1;32m     32[0m     [0;32mfrom[0m [0mpyunitwizard[0m [0;32mimport[0m [0mconvert[0m [0;32mas[0m [0m_convert[0m[0;34m,[0m [0mget_dimensionality[0m [0;32mas[0m [0m_get_dimensionality[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     33[0m [0;34m[0m[0m
+[0;32m---> 34[0;31m     [0mtmp_quantity_or_unit[0m [0;34m=[0m [0m_convert[0m[0;34m([0m[0mquantity_or_unit[0m[0;34m,[0m [0mto_form[0m[0;34m=[0m[0mdefault_form[0m[0;34m,[0m [0mparser[0m[0;34m=[0m[0mdefault_parser[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     35[0m     [0moutput[0m [0;34m=[0m [0m_get_dimensionality[0m[0;34m([0m[0mtmp_quantity_or_unit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     36[0m [0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/main.py[0m in [0;36mconvert[0;34m(quantity_or_unit, to_unit, to_form, parser, to_type)[0m
+[1;32m    227[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    228[0m [0;34m[0m[0m
+[0;32m--> 229[0;31m             [0moutput[0m [0;34m=[0m [0m_parse[0m[0;34m([0m[0mquantity_or_unit[0m[0;34m,[0m [0mparser[0m[0;34m=[0m[0mparser[0m[0;34m,[0m [0mto_form[0m[0;34m=[0m[0mto_form[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    230[0m [0;34m[0m[0m
+[1;32m    231[0m             [0;32mif[0m [0mto_unit[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m~/work/PyUnitWizard/PyUnitWizard/pyunitwizard/parse.py[0m in [0;36mparse[0;34m(string, parser, to_form)[0m
+[1;32m     60[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     61[0m [0;34m[0m[0m
+[0;32m---> 62[0;31m         [0;32mraise[0m [0mNotImplementedParsingError[0m[0;34m([0m[0mparser[0m[0;34m,[0m [0mto_form[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     63[0m [0;34m[0m[0m
+[1;32m     64[0m     [0;32mreturn[0m [0moutput[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNotImplementedParsingError[0m: Parsing a string with the "openmm.unit" parser to the form "openmm.unit" has not been implemented yet. Check  for more information. If you still want to suggest its implementation, open a new issue in https://github.com/uibcdf/PyUnitWizard/issues
+NotImplementedParsingError: Parsing a string with the "openmm.unit" parser to the form "openmm.unit" has not been implemented yet. Check  for more information. If you still want to suggest its implementation, open a new issue in https://github.com/uibcdf/PyUnitWizard/issues
+
